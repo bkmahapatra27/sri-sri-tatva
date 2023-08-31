@@ -1,0 +1,7 @@
+{
+    "name": "@appmaker-packages/theme-test-app",
+    "version": "0.1.0",
+    "main": "src/index.js",
+    "description": "Appmaker",
+    "dependencies": {}
+}

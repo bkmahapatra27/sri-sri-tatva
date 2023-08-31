@@ -1,0 +1,10 @@
+{
+    "type": "theme",
+    "id": "clkw4fwhc00yw070i20afu2ia",
+    "handle": "test-app",
+    "name": "sri_sri_tatva",
+    "package": {
+        "id": "clkw4fwol00yy070ijv3ls9g3",
+        "name": "@appmaker-packages/theme-test-app"
+    }
+}
