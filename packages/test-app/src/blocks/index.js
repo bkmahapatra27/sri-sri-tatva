@@ -1,3 +1,5 @@
+import CustomLogin from './CustomLogin';
+import OfferSection from './OfferSection';
 import ProductGridItem from './ProductGridItem';
 import ProductVariation from './ProductVariation';
 
@@ -9,6 +11,14 @@ const blocks = [
   {
     name: 'appmaker/shopify-product-variation',
     View: ProductVariation,
+  },
+  {
+    name: 'sri-sri-tatva/custom-offer-section',
+    View: OfferSection,
+  },
+  {
+    name: 'sri-sri-tatva/custom-login-block',
+    View: CustomLogin,
   },
 ];
 export { blocks };

@@ -4,16 +4,8 @@ import { Text, View, Image, Pressable } from 'react-native';
 import { StyleSheet } from 'react-native';
 
 const ProductGridItem = (props) => {
-  const {
-    title,
-    salePrice,
-    imageUrl,
-    onAddToCart,
-    openProduct,
-    regularPrice,
-    average_rating,
-    salePercentage,
-  } = useProductListItem(props);
+  const { title, salePrice, imageUrl, onAddToCart, openProduct } =
+    useProductListItem(props);
 
   return (
     <Pressable onPress={openProduct}>

@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Custom Offer Section",
+    "name": "custom-offer-section",
+    "attributesSchema": {
+      "properties": [
+        {
+          "id": "title",
+          "type": "string",
+          "label": "title"
+        }
+      ]
+    },
+    "config": {
+      "innerBlockConfig": {
+        "allowedBlocks": []
+      }
+    }
+  }
+]
