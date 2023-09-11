@@ -1,3 +1,4 @@
+import CoreMenu from '../components/CoreMenu';
 import CustomLogin from './CustomLogin';
 import OfferSection from './OfferSection';
 import ProductGridItem from './ProductGridItem';
@@ -19,6 +20,11 @@ const blocks = [
   {
     name: 'sri-sri-tatva/custom-login-block',
     View: CustomLogin,
+  },
+
+  {
+    name: 'appmaker/core-drawer-menu',
+    View: CoreMenu,
   },
 ];
 export { blocks };
