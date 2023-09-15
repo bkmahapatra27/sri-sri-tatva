@@ -1,9 +1,9 @@
-import CustomLoginPage from './CustomLoginPage';
+import ProductListPage from './ProductListPage';
 import DrawerMenu from './DrawerMenu';
 
 const pages = {
-  LoginPage: CustomLoginPage,
-  DrawerMenu,
+  productList: ProductListPage,
+  DrawerMenu: DrawerMenu,
 };
 
 export { pages };

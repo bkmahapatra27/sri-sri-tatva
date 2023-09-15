@@ -8,12 +8,12 @@ const ProductGridItem = (props) => {
     useProductListItem(props);
 
   return (
-    <Pressable onPress={openProduct}>
-      <View style={styles.container}>
+    <Pressable onPress={openProduct} style={styles.container}>
+      <View style={styles.viewContainer}>
         <View style={styles.imageContainer}>
           <Image style={styles.image} source={{ uri: imageUrl }} />
         </View>
-        <Text style={styles.title}>{title.split(',')[0]}</Text>
+        <Text style={styles.title}>{title.split(',')[0].split('|')[0]}</Text>
         <Text style={styles.quantity}>{title.split(',')[1]}</Text>
         <View style={styles.btnContainer}>
           <Text style={styles.salePrice}>{salePrice}</Text>
@@ -28,29 +28,41 @@ const ProductGridItem = (props) => {
 
 const styles = StyleSheet.create({
   container: {
-    display: 'flex',
-    flexDirection: 'column',
-    width: 200,
-    justifyContent: 'center',
-    textAlign: 'center',
-    margin: 10,
-    padding: 2,
+    width: '50%',
+    maxWidth: 200,
+    height: '100%',
+    justifyContent: 'flex-start',
+    alignContent: 'center',
+    paddingHorizontal: 5,
+    paddingVertical: 10,
+  },
+  viewContainer: {
+    height: '100%',
+    flex: 1,
+    alignContent: 'stretch',
   },
   title: {
     fontSize: 16,
+    lineHeight: 22,
     fontWeight: 'bold',
     fontStyle: 'normal',
     color: '#1E1A1A',
+    paddingVertical: 10,
+  },
+  quantity: {
+    fontSize: 16,
+    fontWeight: '600',
   },
   imageContainer: {
     borderRadius: 16,
     borderStyle: 'solid',
     borderWidth: 0.5,
     borderColor: 'rgba(166, 166, 166, 1.0)',
+    padding: 10,
   },
   image: {
-    width: 'auto',
-    height: 200,
+    width: '100%',
+    height: 150,
     justifyContent: 'center',
     alignItems: 'center',
   },

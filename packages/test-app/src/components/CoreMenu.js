@@ -4,6 +4,7 @@ import {
   FlatList,
   Image,
   Pressable,
+  ScrollView,
   StyleSheet,
   Text,
   View,
@@ -106,10 +107,20 @@ const MenuItem = ({ item, onAction }) => {
 
 //main component
 const CoreMenu = ({ attributes, onAction }) => {
+  const login = () => {
+    onAction({
+      action: 'OPEN_INAPP_PAGE',
+      pageId: 'LoginPage',
+      params: {
+        title: 'Account',
+        replacePage: false,
+      },
+    });
+  };
+
   const menuItems = attributes?.menuItems?.blocks;
-  console.log('-------------------------------', menuItems);
   return (
-    <View style={styles.mainContainer}>
+    <ScrollView style={styles.mainContainer}>
       <FlatList
         data={menuItems}
         renderItem={({ item }) => <MenuItem item={item} onAction={onAction} />}
@@ -117,7 +128,7 @@ const CoreMenu = ({ attributes, onAction }) => {
         contentContainerStyle={styles.container}
       />
       <View style={styles.footerMenu}>
-        <Pressable style={styles.menuItem} onPress={() => {}}>
+        <Pressable style={styles.menuItem} onPress={login}>
           <View style={styles.iconContainer}>
             <Image
               style={styles.menuItemIcon}
@@ -145,7 +156,7 @@ const CoreMenu = ({ attributes, onAction }) => {
           <Text style={styles.menuItemText}>Track Order</Text>
         </Pressable>
       </View>
-    </View>
+    </ScrollView>
   );
 };
 
