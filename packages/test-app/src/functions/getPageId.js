@@ -1,5 +1,6 @@
 import { appmaker } from '@appmaker-xyz/core';
-export function logData() {
+
+export function getPageId() {
   appmaker.addFilter(
     'inapp-page-data-response',
     `namespace`, // namespace
@@ -11,7 +12,6 @@ export function logData() {
         data,
         // .dataSource?.attributes.params,
       );
-
       return data;
     },
   );

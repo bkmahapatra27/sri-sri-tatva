@@ -6,12 +6,9 @@ import { pages } from './pages';
 import { logData } from './functions/logData';
 import HeaderPin from './components/HeaderPin';
 import { images } from './files/index';
-import { getPageId } from './functions/getPageId';
 
 export function activate(params) {
-  // logData();
-  getPageId();
-  console.log('-------------------------------');
+  logData();
   console.log('test-app activated');
 
   appmaker.toolBarIcons.registerToolBarIconForPage('DrawerMenu', {
@@ -33,7 +30,7 @@ export function activate(params) {
   // Add filter to the `app-toolbar-right-extra-components`
   appmaker.addFilter(
     'app-toolbar-right-extra-components',
-    'theme-id',
+    'test-app',
     (defaultComponents, { handleAction }) => {
       return [
         ...defaultComponents,

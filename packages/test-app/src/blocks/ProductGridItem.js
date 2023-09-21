@@ -4,11 +4,28 @@ import { Text, View, Image, Pressable } from 'react-native';
 import { StyleSheet } from 'react-native';
 
 const ProductGridItem = (props) => {
-  const { title, salePrice, imageUrl, onAddToCart, openProduct } =
-    useProductListItem(props);
+  const {
+    title,
+    salePrice,
+    imageUrl,
+    onAddToCart,
+    openProduct,
+    gridViewListing,
+  } = useProductListItem(props);
+
+  const containerStyle = [styles.container];
+  if (gridViewListing) {
+    containerStyle.push({
+      width: '50%',
+    });
+  } else {
+    containerStyle.push({
+      width: 180,
+    });
+  }
 
   return (
-    <Pressable onPress={openProduct} style={styles.container}>
+    <Pressable onPress={openProduct} style={containerStyle}>
       <View style={styles.viewContainer}>
         <View style={styles.imageContainer}>
           <Image style={styles.image} source={{ uri: imageUrl }} />
@@ -21,6 +38,9 @@ const ProductGridItem = (props) => {
             <Text style={styles.btnText}>ADD</Text>
           </Pressable>
         </View>
+      </View>
+      <View>
+        <Text>Gift a smile</Text>
       </View>
     </Pressable>
   );
@@ -52,6 +72,7 @@ const styles = StyleSheet.create({
   quantity: {
     fontSize: 16,
     fontWeight: '600',
+    color: '#847D7D',
   },
   imageContainer: {
     borderRadius: 16,

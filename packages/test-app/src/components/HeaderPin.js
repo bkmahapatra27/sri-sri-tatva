@@ -1,10 +1,11 @@
 import React from 'react';
+import { useState } from 'react';
 import { Pressable, StyleSheet, Text } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 
 const HeaderPin = ({ handleAction }) => {
+  const [pinCode, setPinCode] = useState('Enter Your Pincode');
   const handlePress = () => {
-    //https://developer-docs.appmaker.xyz/docs/actions/appmaker-actions
     handleAction({
       action: 'OPEN_INAPP_PAGE',
       pageId: 'home',
@@ -12,9 +13,9 @@ const HeaderPin = ({ handleAction }) => {
   };
   return (
     <Pressable style={styles.container} onPress={handlePress}>
-      <Icon name="map-pin" size={18} color="#4338CA" />
-      <Text style={styles.text}>682021</Text>
-      <Icon name="chevron-down" size={18} color="#212121" />
+      <Icon name="map-pin" size={18} color="#3EAE1F" />
+      <Text style={styles.text}>{pinCode}</Text>
+      <Icon name="chevron-down" size={18} color="#3EAE1F" />
     </Pressable>
   );
 };

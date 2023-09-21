@@ -17,10 +17,6 @@ const blocks = [
     name: 'sri-sri-tatva/custom-offer-section',
     View: OfferSection,
   },
-  // {
-  //   name: 'sri-sri-tatva/custom-login-block',
-  //   View: CustomLogin,
-  // },
   {
     name: 'appmaker/core-drawer-menu',
     View: CoreMenu,

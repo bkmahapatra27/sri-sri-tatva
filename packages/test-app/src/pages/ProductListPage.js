@@ -9,6 +9,8 @@ const ProductListPage = {
     insideSafeAreaView: true,
     rootContainerStyle: {
       flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
     },
     contentContainerStyle: {
       backgroundColor: 'white',
