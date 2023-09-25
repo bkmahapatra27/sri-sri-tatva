@@ -1,0 +1,19 @@
+{
+  "node": {
+    "customAttributes": ["[Object]"],
+    "discountAllocations": [],
+    "id": "gid://shopify/CheckoutLineItem/453241897944640?checkout=8ac83cd026eaf43a358d5ef0a3e1c2c1",
+    "quantity": 1,
+    "title": "ChocoMalt Ojasvita - Sharp Mind & Fit Body |  Health Drink | 200g, Pet Jar",
+    "unitPrice": null,
+    "variant": {
+      "compareAtPrice": null,
+      "id": "gid://shopify/ProductVariant/45324189794464",
+      "image": "[Object]",
+      "price": "[Object]",
+      "product": "[Object]",
+      "sku": "14002238",
+      "title": "Default Title"
+    }
+  }
+}

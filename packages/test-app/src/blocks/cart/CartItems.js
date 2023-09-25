@@ -6,14 +6,11 @@ const CartItems = (props) => {
   const {
     title,
     imageUri,
-    regularPrice,
     salePrice,
     quantity,
     increaseQuantity,
     decreaseQuantity,
-    quantityLoading,
     openProduct,
-    canUpdateQuantity,
   } = useCartProduct(props);
 
   return (
