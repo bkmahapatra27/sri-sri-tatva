@@ -8,10 +8,13 @@ const ProductGridItem = (props) => {
     title,
     salePrice,
     imageUrl,
+    addToCart,
     onAddToCart,
     openProduct,
     gridViewListing,
   } = useProductListItem(props);
+
+  console.log('---props', props);
 
   const containerStyle = [styles.container];
   if (gridViewListing) {
@@ -30,17 +33,22 @@ const ProductGridItem = (props) => {
         <View style={styles.imageContainer}>
           <Image style={styles.image} source={{ uri: imageUrl }} />
         </View>
-        <Text style={styles.title}>{title.split(',')[0].split('|')[0]}</Text>
+        {/* <Text style={styles.title}>{title.split(',')[0].split('|')[0]}</Text> */}
+        <Text style={styles.title}>{title.slice(0, 40)}</Text>
         <Text style={styles.quantity}>{title.split(',')[1]}</Text>
         <View style={styles.btnContainer}>
           <Text style={styles.salePrice}>{salePrice}</Text>
-          <Pressable style={styles.btn} onPress={onAddToCart}>
+          <Pressable style={styles.btn} onPress={addToCart}>
             <Text style={styles.btnText}>ADD</Text>
           </Pressable>
         </View>
       </View>
-      <View>
-        <Text>Gift a smile</Text>
+      <View style={styles.giftSmileContainer}>
+        <Image
+          style={styles.infoIcon}
+          source={require('../../assets/icons/infocircle.png')}
+        />
+        <Text style={styles.infoText}>Gift A Smile</Text>
       </View>
     </Pressable>
   );
@@ -48,16 +56,18 @@ const ProductGridItem = (props) => {
 
 const styles = StyleSheet.create({
   container: {
-    width: '50%',
-    maxWidth: 200,
-    height: '100%',
-    justifyContent: 'flex-start',
-    alignContent: 'center',
+    flex: 1,
+    // width: '100%',
+    // maxWidth: 200,
+    // height: '100%',
+    // justifyContent: 'flex-start',
+    // alignContent: 'center',
     paddingHorizontal: 5,
     paddingVertical: 10,
   },
   viewContainer: {
     height: '100%',
+    width: '100%',
     flex: 1,
     alignContent: 'stretch',
   },
@@ -80,23 +90,24 @@ const styles = StyleSheet.create({
     borderWidth: 0.5,
     borderColor: 'rgba(166, 166, 166, 1.0)',
     padding: 10,
+    width: '100%',
+    alignItems: 'center',
   },
   image: {
-    width: '100%',
-    height: 150,
-    justifyContent: 'center',
-    alignItems: 'center',
+    width: 100,
+    height: 140,
   },
   btnContainer: {
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+    marginVertical: 10,
   },
   btn: {
     paddingVertical: 8,
-    paddingHorizontal: 20,
-    width: 70,
+    paddingHorizontal: 10,
+    width: 60,
     height: 36,
     borderRadius: 8,
     backgroundColor: '#061E5E',
@@ -104,7 +115,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   btnText: {
-    fontSize: 14,
+    fontSize: 12,
     fontWeight: 'bold',
     fontStyle: 'normal',
     lineHeight: 14,
@@ -116,6 +127,23 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontStyle: 'normal',
     color: '#1E1A1A',
+  },
+  giftSmileContainer: {
+    flexDirection: 'row',
+    marginTop: 10,
+  },
+  infoText: {
+    color: '#5C5656',
+    fontSize: 14,
+    fontWeight: '500',
+    fontStyle: 'normal',
+    lineHeight: 16,
+    textDecorationLine: 'underline',
+  },
+  infoIcon: {
+    marginRight: 5,
+    width: 12,
+    height: 12,
   },
 });
 
