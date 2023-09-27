@@ -1,4 +1,5 @@
 {
+  "id": "productDetail",
   "attributes": {
     "contentContainerStyle": { "flex": 1 },
     "insideSafeAreaView": true,
