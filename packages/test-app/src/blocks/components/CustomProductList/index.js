@@ -28,7 +28,7 @@ const CustomCollection = (props) => {
           <View style={styles.menuImageContainer}>
             <Image
               style={styles.menuImage}
-              source={{ uri: item?.node?.image.url }}
+              source={{ uri: item?.node?.image?.url }}
             />
           </View>
           <Text style={styles.menuTitle}>{item?.node?.title}</Text>
@@ -43,6 +43,7 @@ const CustomCollection = (props) => {
     <View style={{ flex: 1, flexDirection: 'row' }}>
       <View style={styles.menuContainer}>{Switcher()}</View>
       <ProductList
+        onAction={props.onAction}
         collectionQuery={{
           id: collectionId,
         }}

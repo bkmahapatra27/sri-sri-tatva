@@ -14,8 +14,6 @@ const ProductGridItem = (props) => {
     gridViewListing,
   } = useProductListItem(props);
 
-  console.log('---props', props);
-
   const containerStyle = [styles.container];
   if (gridViewListing) {
     containerStyle.push({
@@ -33,12 +31,15 @@ const ProductGridItem = (props) => {
         <View style={styles.imageContainer}>
           <Image style={styles.image} source={{ uri: imageUrl }} />
         </View>
-        {/* <Text style={styles.title}>{title.split(',')[0].split('|')[0]}</Text> */}
-        <Text style={styles.title}>{title.slice(0, 40)}</Text>
+        <Text style={styles.title}>
+          {title.split(',')[0]?.split('|')[0]?.slice(0, 40)}
+        </Text>
         <Text style={styles.quantity}>{title.split(',')[1]}</Text>
         <View style={styles.btnContainer}>
           <Text style={styles.salePrice}>{salePrice}</Text>
-          <Pressable style={styles.btn} onPress={addToCart}>
+          <Pressable
+            style={styles.btn}
+            onPress={() => addToCart({ quantity: 1 })}>
             <Text style={styles.btnText}>ADD</Text>
           </Pressable>
         </View>
